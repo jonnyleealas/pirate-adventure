@@ -10,3 +10,41 @@ h1{
 h2{
     background-color: violet;
 }
+
+#sec1{
+display: flex;
+justify-content: center;
+width: 1920px; 
+}
+
+#sec2{
+display: flex;
+justify-content: center;
+width: 1920px; 
+}
+
+.img2{
+    
+
+}
+
+#sec3{
+display: flex;
+justify-content: center;
+width: 1920px; 
+}
+
+.img3{
+
+
+}
+
+ #sec4{
+display: flex;
+justify-content: center;
+width: 1920px; 
+}
+
+.img4{
+
+}
