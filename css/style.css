@@ -1,3 +1,96 @@
 body{
     background-color: aqua;
 }
+h1{
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50;
+}
+h2{
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+}
+#sec1{
+  
+    width: 1920px;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 300px;
+}
+
+#sec2{
+    width: 1920px;
+    display: flex;
+    justify-content: left;
+}
+.div1{
+
+    margin-left: 50px;
+}
+.img1{
+    margin-right: 50px;
+    float: left;
+}
+ .div2{
+    margin-left: 960px;
+ }
+ .img2{
+    margin-right: 50px;
+    float: left;
+ }
+ .div3{
+
+    margin-left: 50px;
+}
+.img3{
+    margin-right: 50px;
+    float: left;
+}
+
+ .div3{
+    margin-left: 50px;
+
+ }
+
+
+
+ .div4{
+    margin-left: 960px;
+     
+ }
+ .img4{
+    margin-right: 50px;
+    float: left;
+ }
+
+
+
+
+
+
+
+
+
+
+/* 
+.div1{
+    display: flex;
+    justify-content: left;
+}
+.div2{
+    display: flex;
+    justify-content: left;
+}
+.div3{
+    display: flex;
+    justify-content: left;
+
+}
+.div4{
+    display: flex;
+    justify-content: left;
+
+} */
+

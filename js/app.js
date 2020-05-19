@@ -9,9 +9,12 @@ var cardStackArray = [];
 
 
 
-function getUserName() {
+function getUserName(event) {
+event.preventDefault();
   userName = document.loginForm.userName.value; //"Names" on forms need to match these names here
+console.log(userName);
   characterImage();
+  
 }
 function characterImage(form, name) {
   var radios = form.elements[name];
@@ -24,7 +27,9 @@ function characterImage(form, name) {
 }
 
 // NEED ID FROM FORM INPUT FROM HTML
-document.getElementById('form').addEventListener('submmit', getUserName); // might be submit
+var loginForm = document.getElementById('form');
+//this ties form to html
+loginForm.addEventListener('submit', getUserName);
 
 function Character (userName, fightingAbility, pirateSpirit, intelligence, rum, money) {
   this.userName = userName;
