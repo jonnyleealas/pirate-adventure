@@ -65,32 +65,50 @@ h2{
     float: left;
  }
 
+ #home2{
+     width: 1920px;
+     display: flex;
+     justify-content: space-evenly;
+ }
+ .homeimg{
+     display: flex;
+     justify-content: space-evenly;
+     margin-bottom: 50px;
+ }
 
-
-
-
-
-
-
-
-
-/* 
-.div1{
+#homeh1{
+    width: 1920px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
 }
-.div2{
-    display: flex;
-    justify-content: left;
-}
-.div3{
-    display: flex;
-    justify-content: left;
 
+#homeform3{
+    margin-top: 9em;
+    display: flex;
+    justify-content: space-evenly;
 }
-.div4{
+
+#homebutton{
+    width: 1920px;
     display: flex;
     justify-content: left;
+    margin-left: 300px;
+    margin-top: 3em;
+}
 
-} */
+#homeradio1{
+    width: 1920px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.homeradio3{
+    margin-left: 8em;
+    margin-right: 8em;
+}
+
+
+
+
+
 
