@@ -1,15 +1,15 @@
 
-var userName = '';
+// var userName = '';
 
-var loginForm = document.getElementById('form');
-loginForm.addEventListener('submit', getUserName);
+// var loginForm = document.getElementById('form');
+// loginForm.addEventListener('submit', getUserName);
 
-function getUserName(event) {
-  event.preventDefault();
-  userName = document.getElementById('userName').value; //"Names" on forms need to match these names here
-  console.log(userName);
-  // characterImage();
-}
+// function getUserName(event) {
+//   event.preventDefault();
+//   userName = document.getElementById('userName').value; //"Names" on forms need to match these names here
+//   console.log(userName);
+//   // characterImage();
+// }
 // function characterImage(form, name) {
 //   var radios = form.elements[name];
 //   for (var i = 0; i < radios.length; i++) {
