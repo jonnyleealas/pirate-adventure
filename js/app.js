@@ -1,35 +1,20 @@
 'use strict';
-var userName = '';
+
 // Set event listener on form on front page, set username to output
 var rum = 100;
 var money = 100;
 var characterStats = [];
-var imageName = 'fightGuy';
+var imageName = '';
 var cardStackArray = [];
 
 
-
-function getUserName(event) {
-event.preventDefault();
-  userName = document.loginForm.userName.value; //"Names" on forms need to match these names here
-console.log(userName);
-  characterImage();
-  
-}
-function characterImage(form, name) {
-  var radios = form.elements[name];
-  for (var i = 0; i < radios.length; i++) {
-    if (radios[i].checked) {
-      imageName = radios[i].value; // Double check to make sure this works
-      break;
-    }
-  }
+function saveFunction() {
+  // character -userName,index in cardArray[i]
 }
 
-// NEED ID FROM FORM INPUT FROM HTML
-var loginForm = document.getElementById('form');
-//this ties form to html
-loginForm.addEventListener('submit', getUserName);
+// Save button event listener
+var saveButton = document.getElementById('savebar');
+saveButton.addEventListener('click', saveFunction);
 
 function Character (userName, fightingAbility, pirateSpirit, intelligence, rum, money) {
   this.userName = userName;
@@ -60,7 +45,10 @@ function Cards (cardName, text, rumChange, moneyChange, helpingAbility, rumOrMon
   this.moneyChange = moneyChange;
   this.helpingAbility = helpingAbility;
   this.rumOrMoney = rumOrMoney;
+  cardStackArray.push(this);
 }
+
+
 
 Cards.prototype.changeStats = function() {
   characterStats[0].rum += this.rumChange;
@@ -73,10 +61,37 @@ Cards.prototype.changeStats = function() {
 };
 
 Cards.prototype.appendElement = function (parent, childType) {
-  child = document.createElement(childType);
+  var child = document.createElement(childType);
+  child.id = this.cardName;
   child.textContent = this.text;
   parent.appendChild(child);
 };
+
+// evneent listener on parent
+// if id matches begin1 
+// find the card in the cardstack array that is  
+
+new Cards('begin1', 'Go to the Bahamas', 0 , 0, '', '', 'continue', 'stop');
+new Cards('beginTwo', 'Go to Cuba', 0, 0, '', '');
+new Cards('continue', 'Contine on, we don\'t have time to stop!', 50, 0, 'intelligence', 'rum', 'order', 'who-cares');
+new Cards('stop', 'Stop and relax for a bit your crew could use some fun!', -25, -50, 'pirateSpirit', 'rum', 'straight-on', 'shortcut');
+new Cards('straight-on', 'Head straight on towards your destination', 0, -100, 'pirateSpirit', 'money', 'treasure', 'against');
+
+var choiceElement = document.getElementById('choice');
+choiceElement.addEventListener('click', pickCards);
+cardStackArray[0].appendElement(choiceElement,'p');
+cardStackArray[1].appendElement(choiceElement,'p');
+var cardName;
+function pickCards(event) {
+  cardName = event.target.id;
+  // for (var i = 0; i < cardStackArray.length; i ++) {
+  //   // if (){}
+  //empty string
+  
+  alert('i work');
+
+}
+
 
 // Example card
 // new Card (shipSinks, 'we hit rock, the ship sinks',-50, -50, characterStats[0].
@@ -85,4 +100,3 @@ Cards.prototype.appendElement = function (parent, childType) {
 function randomNumber(min,max) {
   return Math.floor(Math.random()*(max - min + 1) + 1);
 }
-
