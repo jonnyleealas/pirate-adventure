@@ -6,3 +6,7 @@ h1{
     display: flex;
     justify-content: center;
 }
+
+h2{
+    background-color: violet;
+}
