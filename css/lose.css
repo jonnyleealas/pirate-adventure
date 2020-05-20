@@ -1,10 +1,53 @@
+body{
+    background-color: skyblue;
+}
+
+
 h1{
     display: flex;
     justify-content: center;
+    font-family: 'Italianno', cursive;
+    font-size: 60px;
 }
 
 .img2{
 
+}
+
+h2{
+    font-family: 'Italianno', cursive;
+    background-color: saddlebrown;
+    color: gold;
+    font-size: 40px;
+    height: 100x;
+    widows: 160px;
+    
+}
+    
+
+h3{
+    font-family: 'Italianno', cursive;
+    background-color: saddlebrown;
+    color: gold;
+    font-size: 40px;
+    height: 100px;
+    width: 330px;
+    float: left; 
+    
+}
+
+#h3{
+    width: 1920px;
+}
+
+h4{
+    font-family: 'Italianno', cursive;
+    font-size: 40px;
+    background-color: saddlebrown;
+    color: gold;
+    font-size: 40px;
+    height: 100px;
+    width: 400px;
 }
 
 #sec2{

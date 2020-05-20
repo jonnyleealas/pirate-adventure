@@ -1,3 +1,9 @@
+body{
+background-color: skyblue;
+
+}
+
+
 ul {
     list-style: none;
    }
@@ -6,11 +12,15 @@ h1{
     width: 1920px;
     display: flex;
     justify-content: center;
+    font-family: 'Italianno', cursive;
+    font-size: 60px;
 }
 h2{
     width: 1920px;
     display: flex;
     justify-content: center;
+    font-family: 'Italianno', cursive;
+    font-size: 50px;
 }
 
 
@@ -28,11 +38,14 @@ h2{
 #narrative{
     width: 1920px;
     height: 200px;
-    background-color: rgb(27, 158, 158);
+    background-color:  saddlebrown;
     display: flex;
   justify-content: space-evenly;
     margin-right: 4em;
     margin-left: 4em;
+    color: red;
+    font-family: 'Italianno', cursive;
+    font-size: 15px;
 }
 
 .choice1{
@@ -52,12 +65,15 @@ h2{
     width: 1920px;
     display: flex;
     justify-content: center;
+    font-family: 'Italianno', cursive;
 }
 
 #savebutton{
     width: 1920px;
     display: flex;
     justify-content: center;
+    font-family: 'Italianno', cursive;
+    font-size: 45px;
 }
 
 /* this changes coins */
@@ -83,7 +99,7 @@ h2{
 
 #coinmeter{
     background-color: yellow;
-    border-style: maroon 1px;
+    border-style: crimson 1px;
     margin-bottom: 1px;
     width: 200px;
     height: 20px;
@@ -103,8 +119,8 @@ h2{
     height: 25px;
 
 }
-#narrative-text{
+/* /* /* #narrative-text{
     width: 100px;
     height: 50px;
-    background-color: aqua;
-}
+    background-color: yellow */
+/* }  
