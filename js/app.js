@@ -180,7 +180,7 @@ new Cards('ignore-offer', 'Ignore the offer and sail into the dark night.', -100
 
 var choiceElement = document.getElementById('choice');
 choiceElement.addEventListener('click', pickCards);
-var narrativeElement = document.getElementById('narrative');
+var narrativeElement = document.getElementById('narrative-text');
 
 for (var i = 0; i < cardStackArray.length; i++) {
   if (cardStackArray[i].cardName === 'beginOne' || cardStackArray[i].cardName === 'beginTwo') {
