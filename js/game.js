@@ -245,8 +245,16 @@ function generateCard() {
         cardStackArray[k].appendElement(choiceElement, 'p');
       }
     }
-    
+    var parentElement = document.getElementById('changingStats');
+    parentElement.textContent = ('');
+    var healthLi = document.createElement('li');
+    healthLi.textContent = `Rum: ${characterStats[0].rum}`;
+    var moneyLi = document.createElement('li');
+    moneyLi.textContent = `Booty: ${characterStats[0].money}`;
+    parentElement.appendChild(healthLi);
+    parentElement.appendChild(moneyLi);
     // cardStackArray[parsedCardIndex].appendElement(choiceElement, 'p');
+    localStorage.clear('saveTrigger');
   } else {
     getUserAndImageFromStorage();
     for (var i = 0; i < cardStackArray.length; i++) {
