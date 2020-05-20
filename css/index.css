@@ -1,0 +1,33 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+#narrative{
+    width: 1920px;
+   
+}
+
+#choice{
+    width: 1920px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.narrative{
+    display: flex;
+    justify-content: center;
+    margin-right: 8em;
+    margin-left: 8em;
+}
+
+.choice1{
+  margin-left: 50px;
+  margin-right:50 px;
+    float: left;
+}
+
+.choice2{
+   margin-right:50 px;
+   margin-left: 50px;
+    float: right;
+}
