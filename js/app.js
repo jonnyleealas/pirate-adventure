@@ -4,49 +4,48 @@
 var rum = 200;
 var money = 200;
 var characterStats = [];
-var imageName = 'fighter';
+var imageName;
 var cardStackArray = [];
-var userName = '';
-
+var userName;
 
 function saveFunction() {
   // character -userName,index in cardArray[i]
 }
 
-
-
 function getUserName(event) {
   event.preventDefault();
-  userName = document.getElementById('userName').value; //"Names" on forms need to match these names here
+  userName = document.getElementById('userName').value;
   console.log(userName);
+  var stringifiedUserName = JSON.stringify(userName);
+  localStorage.setItem('userName', stringifiedUserName);
   characterImage();
 }
 
 function characterImage() {
-
   if (document.getElementById('fighter').checked) {
     imageName = 'fighter';
     console.log(imageName);
   }
-  // var radios = form.name[name];
-  // for (var i = 0; i < radios.length; i++) {
-  //   if (radios[i].checked) {
-  //     imageName = radios[i].value; // Double check to make sure this works
-  //     console.log(imageName);
-      // break;
-    // }
-  // }
+  if (document.getElementById('funGuy').checked) {
+    imageName = 'funGuy';
+    console.log(imageName);
+  }
+  if (document.getElementById('smartGuy').checked) {
+    imageName = 'smartGuy';
+    console.log(imageName);
+  }
+  var stringifiedImageName = JSON.stringify(imageName);
+  localStorage.setItem('imageName', stringifiedImageName);
+  startGame();
+}
+function startGame() {
+  window.location.href = 'index.html';
 }
 
 var loginForm = document.getElementById('form');
-if(loginForm !== null){
+if (loginForm !== null) {
   loginForm.addEventListener('submit', getUserName);
 }
-
-
-
-
-
 
 
 // Save button event listener
@@ -63,15 +62,25 @@ function Character(userName, fightingAbility, pirateSpirit, intelligence, rum, m
   characterStats.push(this);
 }
 // Make characters based on radio click - make radio button name equal to the if statements here
-if (imageName === 'fighter') {
-  var toughGuy = new Character(userName, 15, 10, 5, rum, money);
+function getUserAndImageFromStorage() {
+  if (localStorage.getItem('userName') !== null) {
+    var storeUserName = localStorage.getItem('userName');
+    userName = JSON.parse(storeUserName);
+    var storeImageName = localStorage.getItem('imageName');
+    imageName = JSON.parse(storeImageName);
+  }
+  if (imageName === 'fighter') {
+    new Character(userName, 15, 10, 5, rum, money);
+  }
+  if (imageName === 'smartGuy') {
+    new Character(userName, 5, 10, 15, rum, money);
+  }
+  if (imageName === 'funGuy') {
+    new Character(userName, 5, 20, 5, rum, money);
+  }
 }
-if (imageName === 'smartGuy') {
-  var smartGuy = new Character(userName, 5, 10, 15, rum, money);
-}
-if (imageName === 'funGuy') {
-  var funGuy = new Character(userName, 5, 20, 5, rum, money);
-}
+
+
 
 
 
@@ -88,16 +97,17 @@ function Cards(cardName, text, rumChange, moneyChange, helpingAbility, rumOrMone
   cardStackArray.push(this);
 }
 
-Cards.prototype.changeStats = function () {
+Cards.prototype.changeStats = function() {
   characterStats[0].rum += this.rumChange;
   if (characterStats[0].rum > 200) {
     characterStats[0].rum = 200;
   }
   characterStats[0].money += this.moneyChange;
   // Make a random number based on how strong their helping ability is, then if they have a helping ability higher than 10, they get a bonus.
-  var randomAbilityHelp = randomNumber(6, this.helpingAbility);
-  if (this.helpingAbility >= 10) { // math.rondom()
-    this.rumOrMoney += randomAbilityHelp;
+  var helpAmount = this.helpingAbility;
+  var randomAbilityHelp = randomNumber(6, characterStats[0][helpAmount]);
+  if (characterStats[0][this.rumOrMoney] >= 10) { // math.rondom()
+    characterStats[0][this.rumOrMoney] += randomAbilityHelp;
   }
   var parentElement = document.getElementById('changingStats');
   parentElement.textContent = ('');
@@ -141,14 +151,14 @@ new Cards('straight-on', 'Head straight on towards your destination', 0, -100, '
 new Cards('against', 'Decide against it.', -100, 0, '', '', '', '');
 // Narrative :Your crew kills you in your sleep and elects the first mate to be captain and goes after the treasure leaving your body to rot. GAME OVER.
 new Cards('treasure', 'Go after the treasure', -30, 0, 'fightingAbility', 'rum', 'ignore', 'heed');
-new Cards('heed', 'Heed his warning, he seems to know a thing or two. He is Blackbeard after all.', -100, 0, '', '', '', '')
+new Cards('heed', 'Heed his warning, he seems to know a thing or two. He is Blackbeard after all.', -100, 0, '', '', '', '');
 // Narrative: You listened to Blackbeard's warning and you decided to not drink from the grail. The problem is you and your crew woke up the temple watchers from their sleep. They are lizard people and they capture you all and decide to enslave everyone. GAME OVER
 new Cards('ignore', 'Ignore his warning! Of course a dead guy wouldn\'t want you to live forever!', -100, 0, '', '', '', '');
 // Narrative: You ignore Blackbeards warning and you start to feel funny from drinking from the grail. You are granted the gift of eternal life but you can never leave the temple for the rest of eternity. As punishment for disobeying Blackbeards warning your whole crew turns to gold statues to watch the temple forever.  GAME OVER
 // CUBA ROUTE
-new Cards('beginTwo', 'Go to Cuba', 0, 0, '', '', 'cubaShortcut', 'long-way','On your journey you see an island with a rocky pass down its middle.');
-new Cards('cubaShortcut', 'Take the shortcut through the pass.', 0, -30, 'pirateSpirit', 'money', 'east', 'west','Your ship takes damage and you must stop to repair it using much of what little gold you have left. You go back and go around the island instead. It took a while but you safely made it past the island. What direction to Cuba again?');
-new Cards('long-way', 'Take the long way around the island', 30, 0, 'intelligence', 'rum', 'east', 'west')
+new Cards('beginTwo', 'Go to Cuba', 0, 0, '', '', 'cubaShortcut', 'long-way', 'On your journey you see an island with a rocky pass down its middle.');
+new Cards('cubaShortcut', 'Take the shortcut through the pass.', 0, -30, 'pirateSpirit', 'money', 'east', 'west', 'Your ship takes damage and you must stop to repair it using much of what little gold you have left. You go back and go around the island instead. It took a while but you safely made it past the island. What direction to Cuba again?');
+new Cards('long-way', 'Take the long way around the island', 30, 0, 'intelligence', 'rum', 'east', 'west');
 new Cards('west', 'Go West!', 25, 0, 'pirateSpirit', 'rum', 'fight', 'sneak');
 new Cards('sneak', 'Try and sneak past the British Naval ship', -100, 0, '', '', '', '');
 // Narrative: Oh No! The British caught you and you are hung publicly for your treacherous pirate crimes! Game Over.
@@ -203,12 +213,9 @@ function pickCards(event) {
   }
 }
 
-
-
-// Example card
-// new Card (shipSinks, 'we hit rock, the ship sinks',-50, -50, characterStats[0].
-// intelligence, money);
-
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + 1);
 }
+
+getUserAndImageFromStorage();
+
