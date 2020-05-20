@@ -3,7 +3,34 @@ h1{
     justify-content: center;
 }
 
+.img2{
+
+}
+
 #sec2{
     margin-left: 8em;
     margin-right: 8em;
+}
+
+.img3{
+
+}
+
+#sec3{
+    margin-left: 8em;
+    margin-right: 8em;
+
+}
+
+.img4{
+
+}
+
+#sec4{
+margin-left: 5em;
+margin-right: 5em;
+margin-top: 5em;
+display: flex;
+justify-content: center;
+width: 1920px;
 }
