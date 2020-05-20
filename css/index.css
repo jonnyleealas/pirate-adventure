@@ -1,10 +1,22 @@
+ul {
+    list-style: none;
+   }
+
 h1{
+    width: 1920px;
+    display: flex;
+    justify-content: center;
+}
+h2{
+    width: 1920px;
     display: flex;
     justify-content: center;
 }
 
+
 #narrative{
     width: 1920px;
+    margin-bottom: 2em;
    
 }
 
@@ -13,21 +25,81 @@ h1{
     display: flex;
     justify-content: space-evenly;
 }
-.narrative{
+#narrative{
+    width: 1920px;
+    height: 200px;
+    background-color: rgb(27, 158, 158);
     display: flex;
-    justify-content: center;
-    margin-right: 8em;
-    margin-left: 8em;
+  justify-content: space-evenly;
+    margin-right: 4em;
+    margin-left: 4em;
 }
 
 .choice1{
-  margin-left: 50px;
+  margin-left: 70px;
   margin-right:50 px;
     float: left;
 }
 
 .choice2{
-   margin-right:50 px;
+   margin-right:70 px;
    margin-left: 50px;
     float: right;
+}
+
+#savebar{
+    
+    width: 1920px;
+    display: flex;
+    justify-content: center;
+}
+
+#savebutton{
+    width: 1920px;
+    display: flex;
+    justify-content: center;
+}
+
+/* this changes coins */
+#changingstats1{
+    
+    
+   
+}
+
+/* this changes meters */
+#changingstats2{
+    margin-right: 20em;
+
+  
+   
+}
+
+#pic1{
+    float: left;
+   
+}
+
+
+#coinmeter{
+    background-color: yellow;
+    border-style: maroon 1px;
+    margin-bottom: 1px;
+    width: 200px;
+    height: 20px;
+}
+
+#rummeter{
+    background-color: yellow;
+    margin-bottom: 1px;
+    width: 200px;
+    height: 25px;
+
+}
+
+#spiritmeter{
+    background-color: yellow;
+    width: 200px;
+    height: 25px;
+
 }
