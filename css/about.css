@@ -11,6 +11,7 @@ h1{
     justify-content: center;
     margin-bottom: 50;
     font-family: 'Italianno', cursive;
+    background-color: #03a8f4;
 }
 h2{
     font-size: 50px;
@@ -166,14 +167,14 @@ button {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-  color: aqua;
+    color: aqua;
     display: block;
     transition: 0.3s;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-   color: gold;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: gold;
   }
   
   /* Position and style the close button (top right corner) */
@@ -212,4 +213,11 @@ button {
         font-size: 20px;
         font-family: 'Italianno', cursive;
       color:brown;
-  /* this is for the side nav  */
+    }
+
+    .howto{
+        color: aqua;
+    }
+
+/* this is for the side nav  */
+

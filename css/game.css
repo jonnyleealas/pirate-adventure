@@ -1,5 +1,5 @@
 body{
-background-color: skyblue;
+background-color:#87CEEB;
 
 }
 
@@ -41,7 +41,7 @@ h2{
 #narrative{
     width: 1920px;
     height: 200px;
-    background-color:  saddlebrown;
+    background-color:  #8b4513;
     display: flex;
   justify-content: space-evenly;
     margin-right: 4em;
@@ -157,6 +157,8 @@ h2{
     border: solid 5px gold;
     padding: 5px;
 }
+
+
 
 
 /* /* /* #narrative-text{
