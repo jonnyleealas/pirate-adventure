@@ -1,3 +1,6 @@
+/* this css sheet is for both index and the about html */
+
+
 body{
     background-color: skyblue;
 }
@@ -108,7 +111,6 @@ h2{
     margin-left: 8em;
     margin-right: 8em;
 }
-
 
 
 
