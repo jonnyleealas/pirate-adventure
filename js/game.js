@@ -35,6 +35,7 @@ function getUserAndImageFromStorage() {
 
   var imageParent = document.getElementById('pic1');
   var newImage = document.createElement('img');
+  newImage.id='pic';
   if (imageName === 'fighter') {
     new Character(userName, 15, 10, 5, rum, money);
     newImage.src='img/toughGuy.png';
