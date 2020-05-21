@@ -76,15 +76,16 @@ h2{
     font-size: 45px;
 }
 
-/* this changes coins */
+/* this cchanges rum and booty */
 #changingstats1{
-    
-    
+    font-size: 2em;
+    color: yellow;
    
 }
 
 /* this changes meters */
 #changingstats2{
+    font-size: 1em;
     margin-right: 20em;
 
   
@@ -118,6 +119,17 @@ h2{
     width: 200px;
     height: 25px;
 
+}
+
+
+#narrative-text{
+    font-family: 'Italianno', cursive;
+    font-size: 2em;
+    width: 300px;
+    position: absolute;
+    top: 675px;
+    margin-left: 760px;
+    
 }
 
 /* /* /* #narrative-text{
