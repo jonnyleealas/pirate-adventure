@@ -30,14 +30,22 @@ function getUserAndImageFromStorage() {
     var storeImageName = localStorage.getItem('imageName');
     imageName = JSON.parse(storeImageName);
   }
+  var imageParent = document.getElementById('pic1');
+  var newImage = document.createElement('img');
   if (imageName === 'fighter') {
     new Character(userName, 15, 10, 5, rum, money);
+    newImage.src='img/toughGuy.png';
+    imageParent.appendChild('newImage');
   }
   if (imageName === 'smartGuy') {
     new Character(userName, 5, 10, 15, rum, money);
+    newImage.src='img/smartGuy.png';
+    imageParent.appendChild('newImage');
   }
   if (imageName === 'funGuy') {
     new Character(userName, 5, 20, 5, rum, money);
+    newImage.src='img/funGuy.png';
+    imageParent.appendChild('newImage');
   }
 }
 

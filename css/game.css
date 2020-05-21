@@ -9,11 +9,14 @@ ul {
    }
 
 h1{
-    width: 1920px;
+    border: solid 15px gold;
+    width: 1165px;
     display: flex;
     justify-content: center;
     font-family: 'Italianno', cursive;
     font-size: 60px;
+    margin-left: 400px;
+    
 }
 h2{
     width: 1920px;
@@ -69,11 +72,20 @@ h2{
 }
 
 #savebutton{
-    width: 1920px;
-    display: flex;
-    justify-content: center;
+    width: 200px;
+    height: 30px;
+   display: flex;
+   justify-content: center;
+    text-align: center;
     font-family: 'Italianno', cursive;
-    font-size: 45px;
+    font-size: 25px;
+    cursor: pointer;
+    color: gold;
+    background-color: brown;
+    border: solid 5px gold;
+    padding: 3px;
+    margin-left: 900px;
+    margin-top: 2em;
 }
 
 /* this cchanges rum and booty */
@@ -123,14 +135,29 @@ h2{
 
 
 #narrative-text{
+    color: brown;
     font-family: 'Italianno', cursive;
-    font-size: 2em;
-    width: 300px;
+    font-size: 30px;
+    width: 1000px;
     position: absolute;
-    top: 675px;
-    margin-left: 760px;
+    top: 630px;
+    margin-left: 550px;
+    margin-top: 250px;
+}
+/* this changes the choice words */
+#choice{
+    
     
 }
+
+#choice p{
+    cursor: pointer;
+    color: gold;
+    background-color: brown;
+    border: solid 5px gold;
+    padding: 5px;
+}
+
 
 /* /* /* #narrative-text{
     width: 100px;
