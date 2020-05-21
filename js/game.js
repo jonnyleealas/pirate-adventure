@@ -234,15 +234,10 @@ function saveFunction() {
 }
 
 
-
-
-
-
 window.addEventListener('load', generateCard);
 function generateCard() {
   makeCards();
   if (localStorage.getItem('saveTrigger') !== null) {
-    console.log('i am working');
     var localStorageCharacter = localStorage.getItem('character');
     var parsedCharacter = JSON.parse(localStorageCharacter);
     characterStats = [];
@@ -274,8 +269,8 @@ function generateCard() {
     moneyLi.textContent = `Booty: ${characterStats[0].money}`;
     parentElement.appendChild(healthLi);
     parentElement.appendChild(moneyLi);
+    getUserAndImageFromStorage();
     localStorage.setItem('saveTrigger', false);
-
   } else {
     getUserAndImageFromStorage();
     for (var i = 0; i < cardStackArray.length; i++) {
