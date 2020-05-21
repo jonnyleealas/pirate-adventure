@@ -15,8 +15,8 @@ h1{
     justify-content: center;
     font-family: 'Italianno', cursive;
     font-size: 60px;
-    /* margin-left: 400px; */
-    margin: auto;
+    margin-left: 400px;
+    /* margin:  auto; */
     margin-bottom: 10px;
     
 }
