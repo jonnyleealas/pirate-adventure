@@ -5,19 +5,19 @@ var imageName;
 var userName;
 
 // end of game page
-var loadSaveButton = document.getElementById('sec4');
-if (loadSaveButton !== null) {
-  loadSaveButton.addEventListener('click', loadSaved);
-}
+// var loadSaveButton = document.getElementById('sec4');
+// if (loadSaveButton !== null) {
+//   loadSaveButton.addEventListener('click', loadSaved);
+// }
 
-function loadSaved() {
-  if (localStorage.getItem('character') !== null) {
-    var saveTrigger = true;
-    var stringiedSaveTrigger = JSON.stringify(saveTrigger);
-    localStorage.setItem('saveTrigger', stringiedSaveTrigger);
-    window.location.href = 'game.html';
-  }
-}
+// function loadSaved() {
+//   if (localStorage.getItem('character') !== null) {
+//     var saveTrigger = true;
+//     var stringiedSaveTrigger = JSON.stringify(saveTrigger);
+//     localStorage.setItem('saveTrigger', stringiedSaveTrigger);
+//     window.location.href = 'game.html';
+//   }
+// }
 
 
 // var localStorageCharacter = localStorage.getItem('character');
@@ -36,6 +36,7 @@ function loadSaved() {
 
 function getUserName(event) {
   event.preventDefault();
+  localStorage.clear();
   userName = document.getElementById('userName').value;
   console.log(userName);
   var stringifiedUserName = JSON.stringify(userName);
