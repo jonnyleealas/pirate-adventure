@@ -1,14 +1,38 @@
 body {
-background-color:white;
+background-color: deepskyblue;
 }
 
 h1{
     display: flex;
     justify-content: center;
+    font-family: 'Italianno', cursive;
+    font-size: 55px;
 }
 
 h2{
-    background-color: violet;
+    background-color:  saddlebrown;
+    font-family: 'Italianno', cursive;
+    font-size: 38px;
+    color: gold;
+    
+}
+
+h3{
+    font-family: 'Italianno', cursive;
+    font-size: 35px;
+    width: 150px;
+    height: 60px;
+    background-color: saddlebrown;
+    color: gold;
+}
+
+h4{
+    font-family: 'Italianno', cursive;
+    font-size: 35px;
+    width: 200px;
+    height: 60px;
+    background-color: saddlebrown;
+    color: gold;
 }
 
 #sec1{
