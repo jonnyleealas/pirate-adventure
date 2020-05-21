@@ -30,23 +30,27 @@ function getUserAndImageFromStorage() {
     var storeImageName = localStorage.getItem('imageName');
     imageName = JSON.parse(storeImageName);
   }
+  var nameParent = document.getElementById('username');
+  nameParent.textContent = `Ahoy there ${userName}!`;
+
   var imageParent = document.getElementById('pic1');
   var newImage = document.createElement('img');
   if (imageName === 'fighter') {
     new Character(userName, 15, 10, 5, rum, money);
     newImage.src='img/toughGuy.png';
-    imageParent.appendChild('newImage');
+    imageParent.appendChild(newImage);
   }
   if (imageName === 'smartGuy') {
     new Character(userName, 5, 10, 15, rum, money);
     newImage.src='img/smartGuy.png';
-    imageParent.appendChild('newImage');
+    imageParent.appendChild(newImage);
   }
   if (imageName === 'funGuy') {
     new Character(userName, 5, 20, 5, rum, money);
     newImage.src='img/funGuy.png';
-    imageParent.appendChild('newImage');
+    imageParent.appendChild(newImage);
   }
+
 }
 
 function Cards(cardName, text, rumChange, moneyChange, helpingAbility, rumOrMoney, choiceOne, choiceTwo, narrative) {
@@ -67,6 +71,11 @@ Cards.prototype.changeStats = function () {
   if (characterStats[0].rum > 200) {
     characterStats[0].rum = 200;
   }
+  if (this.choiceTwo === 'loseEnding') {
+    var stringifiedNarrative = JSON.stringify(this.narrative);
+    localStorage.setItem('endNarrative', stringifiedNarrative);
+    window.location.href = 'lose.html';
+  }
   if (characterStats[0].rum <= 0) {
     window.location.href = 'lose.html';
   }
@@ -78,7 +87,7 @@ Cards.prototype.changeStats = function () {
     characterStats[0][this.rumOrMoney] += randomAbilityHelp;
   }
   if (this.choiceTwo === 'mainEnding'){
-    var stringifiedNarrative = JSON.stringify(this.narrative);
+    stringifiedNarrative = JSON.stringify(this.narrative);
     localStorage.setItem('endNarrative', stringifiedNarrative);
     window.location.href = 'win.html';
   }
@@ -118,19 +127,19 @@ function makeCards() {
   new Cards('who-cares', 'Who cares about an old barrel! It\'s probably just some garbage', -50, 0, 'fightingAbility', 'rum', 'tell-stop', 'worry-later', 'A crew member jokingly shoots the barrel with her pistol and the whole crew watches in shock as the glimmer of treasure shines through the bullet hole. The barrel takes in water and sink. The pirates roar in anger and a brawl breaks out causing you to lose sober up and lose some rum.Out of the corner of your eye you notice that your destination is close.');
 
   // GAME OVER
-  new Cards('worry-later', ' I\'ll worry about it after I finish beating this scallywag!', -200, 0, '', '', '', '', 'You get so engrossed in the wonderful pirate brawl that you sail right past the Bahamas. As the brawl continues you don\'t notice the British Naval ship coming towards you! They catch you and your crew and sentence you to hanging for all of your terrible pirate crimes! Game Over!');
+  new Cards('worry-later', ' I\'ll worry about it after I finish beating this scallywag!', -200, 0, '', '', '', 'loseEnding', 'You get so engrossed in the wonderful pirate brawl that you sail right past the Bahamas. As the brawl continues you don\'t notice the British Naval ship coming towards you! They catch you and your crew and sentence you to hanging for all of your terrible pirate crimes! Game Over!');
 
   new Cards('tell-stop', 'Tell the crew to stop their nonsense and land in the Bahamas.', 0, -100, 'intelligence', 'money', 'treasure', 'against', 'You and your crew make it to the Bahamas. You are able to get all the supplies you need to keep sailing in the world but have spent a lot of your booty. You decide to stay the night in Nassau and one of your crew members remembers hearing of a hidden treasure on this island. This  treasure is the lost treasure of Blackbeard. The famous explorer that rumoredly found the holy grail. He tells you that if you guys find this you will be set for life. You have doubts about this treasure existing or not, but you need to prove yourself after the barrel mishap from earlier…');
 
   // Stop at Pirate Island
-  new Cards('stop', 'Stop and relax for a bit your crew could use some fun!', -25, -50, 'pirateSpirit', 'rum', 'straight-on', 'shortcut', 'You and your crew wake up groggy, heads pounding, and smelling rather foul. You have lost some rum and definitely some booty. Now you are behind and the British could be that much closer. You set sail again.');
+  new Cards('stop', 'Stop and relax for a bit your crew could use some fun!', -25, -50, 'pirateSpirit', 'rum', 'straight-on', 'bahamasShortcut', 'You and your crew wake up groggy, heads pounding, and smelling rather foul. You have lost some rum and definitely some booty. Now you are behind and the British could be that much closer. You set sail again.');
 
   new Cards('bahamasShortcut', 'Take a shortcut that you were told about on the pirate island', -25, -25, 'pirateSpirit', 'rum', 'stop', 'straight-on', 'You take the shortcut by some sharp rocks and while trying to avoid them get stuck in a whirlpool losing a lot of your resources. You have to go back to where you were, there is no way you are making it through that again.');
 
 
   new Cards('straight-on', 'Head straight on towards your destination', 0, -150, 'pirateSpirit', 'money', 'treasure', 'against', 'You and your crew make it to the Bahamas. You are able to get all the supplies you need to keep sailing in the world but have spent a lot of your booty. You decide to stay the night in Nassau and one of your crew members remembers hearing of a hidden treasure on this island.is  treasure is the lost treasure of Blackbeard. The famous explorer that rumoredly found the holy grail. He tells you that if you guys find this you will be set for life. You have doubts about this treasure existing or not…');
 
-  new Cards('against', 'Decide against it.', -200, 0, '', '', '', '', 'Your crew kills you in your sleep and elects the first mate to be captain and goes after the treasure leaving your body to rot. GAME OVER.');
+  new Cards('against', 'Decide against it.', -200, 0, '', '', '', 'loseEnding', 'Your crew kills you in your sleep and elects the first mate to be captain and goes after the treasure leaving your body to rot. GAME OVER.');
 
   new Cards('treasure', 'Go after the treasure', -50, 0, 'fightingAbility', 'rum', 'ignore', 'heed', 'You decide to go after the treasure, but through the perilous journey you lose half of your crew and have sobered up and lost a lot of rum. The ones that are alive are forever changed by the search of this.  After months of searching you finally find the treasure. As soon as you pick up the grail, the ghost of Blackbread warns you about drinking from the grail.');
 
@@ -148,26 +157,26 @@ function makeCards() {
   new Cards('west', 'Go West!', 25, 0, 'pirateSpirit', 'rum', 'fight', 'sneak', 'It took a while but you safely made it past the island and used the extra time to get some more rum in your system. You feel great! Hic… what direction to Cuba again?');
 
   // GAME OVER
-  new Cards('sneak', 'Try and sneak past the British Naval ship', -200, 0, '', '', '', '', 'Oh No! The British caught you and you are hung publicly for your treacherous pirate crimes! Game Over.');
+  new Cards('sneak', 'Try and sneak past the British Naval ship', -200, 0, '', '', '', 'loseEnding', 'Oh No! The British caught you and you are hung publicly for your treacherous pirate crimes! Game Over.');
 
   new Cards('fight', 'Fight your way out of the city! Yar!!', -75, -75, 'fightingAbility', 'rum', 'confront', 'sail-on', 'Like a true pirate you decide to lead you and your crew into a bloody fight against those stuck up Brits! You get out of Havana but are only left with half the supplies you started with. You and what\'s left of your crew need to escape so you decide to head towards the Bahamas. As you are sailing into the night you run into a mysterious ship...');
 
 
   //GAME OVER
-  new Cards('sail-on', 'Sail on past it, you don\'t have time to investigate!', -200, 0, '', '', '', '', 'The mysterious ship destroys your ship with its cannons. The ship sinks and any survivors are killed by its crew. GAME OVER.');
+  new Cards('sail-on', 'Sail on past it, you don\'t have time to investigate!', -200, 0, '', '', '', 'loseEnding', 'The mysterious ship destroys your ship with its cannons. The ship sinks and any survivors are killed by its crew. GAME OVER.');
 
   new Cards('confront', 'Stop and confront the ship!', - 50, 0, 'pirateSpirit', 'rum', 'sell-souls', 'ignore-offer', 'Upon investigation you find that the captain of the mysterious vessel is the devil himself Davy Jones!( It scares you so much you lose some health) Davy Jones knows good and well about what is going on in your situation and offers you a deal...');
 
   new Cards('east', 'Go East!', -25, 0, 'intelligence', 'rum', 'head-towards', 'keep-going-storm', 'Heading east leads your right into a terrible storm, your ship is taking damage leaving you battered and more sober! You need to think quickly!');
 
   // GAME OVER
-  new Cards('keep-going-storm', 'Keep going straight into the storm, you can make it through!', -200, 0, '', '', '', '', 'You try and brave the storm but it tears your ship into pieces. You wake up on a beautiful beach of an abandoned island with no one else in sight. You live out the rest of your days living the island life, and since no one else knew what became of you, your name is forever remembered as one of the great pirate legends. Game Over.');
+  new Cards('keep-going-storm', 'Keep going straight into the storm, you can make it through!', -200, 0, '', '', '', 'loseEnding', 'You try and brave the storm but it tears your ship into pieces. You wake up on a beautiful beach of an abandoned island with no one else in sight. You live out the rest of your days living the island life, and since no one else knew what became of you, your name is forever remembered as one of the great pirate legends. Game Over.');
 
   new Cards('head-towards', 'Head towards what you believe to be a lighthouse in the distance', 50, 0, 'pirateSpirit', 'rum', 'investigate', 'pass-ship', 'What you believed to be a lighthouse is actually a lantern off a mysterious ship. The storm seems to ease up the closer you get to it and you take a swig of rum to ease your nerves! Half the crew urges you to investigate it in hopes of finding treasure, the other half beg you to keep going as they have an uneasy feeling.');
 
 
   // GAME OVER
-  new Cards('pass-ship', 'Pass the mysterious ship', -200, 0, '', '', '', '', 'Your ship slowly moves past the mysterious ship and you sigh a breath of relief after it is gone. The storm has cleared but a crew member notices a shadow in the water. A monstrosity of a sea serpent comes out of the water and eats you whole. GAME OVER.');
+  new Cards('pass-ship', 'Pass the mysterious ship', -200, 0, '', '', '', 'loseEnding', 'Your ship slowly moves past the mysterious ship and you sigh a breath of relief after it is gone. The storm has cleared but a crew member notices a shadow in the water. A monstrosity of a sea serpent comes out of the water and eats you whole. GAME OVER.');
 
   new Cards('investigate', 'Investigate the mysterious ship!', -75, 0, 'fightingAbility', 'sell-souls', 'ignore-offer', 'Upon investigation you find that the captain of the mysterious vessel is the devil himself Davy Jones!This scares you so much you sober up! Davy Jones knows good and well about what is going on in your situation and offers you a deal…');
 
@@ -210,7 +219,7 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + 1);
 }
 
-var saveButton = document.getElementById('savebar');
+var saveButton = document.getElementById('savebutton');
 if (saveButton !== null) {
   saveButton.addEventListener('click', saveFunction);
 }
@@ -242,10 +251,13 @@ function generateCard() {
     var parsedCardIndex = JSON.parse(localStorageCardIndex);
     console.log(`getting card index out of local storage${parsedCardIndex}`);
     // render the narrative from the card
-    cardStackArray[parsedCardIndex].appendNarrative(narrativeElement, 'p');
+    narrativeElement.textContent = '';
+    cardStackArray[parsedCardIndex].appendNarrative(narrativeElement,'p');
+    choiceElement.textContent = '';
     for (var j = 0; j < cardStackArray.length; j++) {
+      console.log('cardstack working');
       if (cardStackArray[parsedCardIndex].choiceOne === cardStackArray[j].cardName) {
-        cardStackArray[j].appendElement(choiceElement, 'p');
+        cardStackArray[j].appendElement(choiceElement,'p');
       }
     }
     for (var k = 0; k < cardStackArray.length; k++) {
@@ -261,8 +273,8 @@ function generateCard() {
     moneyLi.textContent = `Booty: ${characterStats[0].money}`;
     parentElement.appendChild(healthLi);
     parentElement.appendChild(moneyLi);
-    // cardStackArray[parsedCardIndex].appendElement(choiceElement, 'p');
-    localStorage.clear('saveTrigger');
+    localStorage.setItem('saveTrigger', false);
+
   } else {
     getUserAndImageFromStorage();
     for (var i = 0; i < cardStackArray.length; i++) {
