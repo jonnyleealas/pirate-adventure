@@ -1,5 +1,5 @@
 body{
-    background-color: skyblue;
+    background-color: rgb(109, 0, 22);
 }
 
 
@@ -10,17 +10,20 @@ h1{
     font-size: 60px;
 }
 
-.img2{
-
-}
+#headerPic{
+margin-left: 500px;
+border: 5px solid gold;
+} 
 
 h2{
     font-family: 'Italianno', cursive;
     background-color: saddlebrown;
     color: gold;
     font-size: 40px;
-    height: 100x;
-    widows: 160px;
+    height: 50px;
+    width: 800px;
+    text-align: center;
+    margin-left: 550px;
     
 }
     
@@ -37,7 +40,8 @@ h3{
 }
 
 #h3{
-    width: 1920px;
+    width: 1800px;
+
 }
 
 h4{
@@ -50,13 +54,19 @@ h4{
     width: 400px;
 }
 
-#sec2{
-    margin-left: 8em;
-    margin-right: 8em;
+
+#imgFlagOne{
+    width: 50px;
+    float: left;
+    margin-top: 80px;
+
 }
-
-.img3{
-
+#imgFlagTwo{
+    width: 50px;
+    float:right;
+    margin-top: -690px;
+    margin-right: 400px;
+    
 }
 
 #sec3{
@@ -65,10 +75,29 @@ h4{
 
 }
 
-.img4{
-
+#scrollImage{
+    width:960px;
+    display: flex;
+    justify-content: center;
+    margin-left:470px;
 }
 
+#sec3{
+    color: brown;
+    font-family: 'Italianno', cursive;
+    font-size: 35px;
+    font-weight: bold;
+    width: 675px;
+    height: auto;
+    position: absolute;
+    top: 630px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 600px;
+    margin-top: 80px;
+
+}
 #sec4{
 margin-left: 5em;
 margin-right: 5em;
@@ -77,3 +106,38 @@ display: flex;
 justify-content: center;
 width: 1920px;
 }
+
+#loadMessage{
+    position: absolute;
+    font-family: 'Italianno', cursive;
+    background-color: saddlebrown;
+    color: gold;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom:10px;
+    height: 30px;
+    width: 800px;
+    margin-left:550px;
+    margin-bottom: 30px;
+}
+    
+
+#revert{
+    width: 200px;
+    height: 30px;
+   display: flex;
+   justify-content: center;
+    text-align: center;
+    font-family: 'Italianno', cursive;
+    font-size: 25px;
+    cursor: pointer;
+    color: gold;
+    background-color: brown;
+    border: solid 5px gold;
+    padding: 3px;
+    margin-left: 825px;
+    margin-top: 100px;
+}
+
+
