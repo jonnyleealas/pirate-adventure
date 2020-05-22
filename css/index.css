@@ -14,34 +14,34 @@ h1{
     background-color: #03a8f4;
 }
 h2{
-    font-size: 50px;
+    font-size: 40px;
     display: flex;
     justify-content: center;
     font-family: 'Italianno', cursive;
 }
 #sec1{
   
-    width: 1920px;
+    width: 960px;
     display: flex;
     justify-content: left;
     margin-bottom: 300px;
 }
 
 #sec2{
-    width: 1920px;
+    width: 960px;
     display: flex;
     justify-content: left;
 }
 .div1{
 
-    margin-left: 50px;
+    margin-left: 100px;
 }
 .img1{
     margin-right: 50px;
     float: left;
 }
  .div2{
-    margin-left: 960px;
+    margin-left: 5200px; */
  }
  .img2{
     margin-right: 50px;
@@ -94,11 +94,19 @@ h2{
     color: brown;
     font-size: 2em;
     font-family: 'Italianno', cursive;
-    margin-top: 9em;
+    margin-top: 2em;
     display: flex;
-    justify-content: space-evenly;
+    margin-left:700px ;
 }
-
+#userName{
+  height: 30px;
+  width: 200px;
+  margin-left: 10px;
+  font-size: .5em;
+  font-family: 'Italianno', cursive;
+  color: brown;
+  font-weight: bolder;
+}
 #homebutton{
     width: 1920px;
     display: flex;
@@ -125,19 +133,23 @@ h2{
 
 
 button {
+  position: absolute;
+  left: 900px;
+  top: 1120px;
     font-family: 'Italianno', cursive;
     display: inline-block;
     padding: 15px 25px;
     font-size: 24px;
     cursor: pointer;
-    text-align: center;
+    
     text-decoration: none;
     outline: none;
-   color: gold;
+    color: gold;
     background-color: red;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    
   }
   
   button:hover {background-color: tomato}
@@ -171,6 +183,7 @@ button {
     color: aqua;
     display: block;
     transition: 0.3s;
+    text-decoration: underline;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -207,27 +220,28 @@ button {
       margin-left: 4em;
       
       color: gold;
-      margin-top: 300px;
     }
     #click{
+        position: absolute;
+        top:50px ;
         margin-top: 1em;
         font-size: 20px;
         font-family: 'Italianno', cursive;
-      color:brown;
+        color:brown;
+      
     }
 
     .howto{
-        color: aqua;
+      color: gold;
+        padding-left: .5em;
+        padding-right: .5em;
+        line-height: 2em;
+        font-family: 'Italianno', cursive;
     }
 
 
 
-/* this is for the side nav  */
 
-/* radio invisible code  */
-/* input[type='radio'] {
-    transform: scale(5);
-} */
 
 /* HIDE RADIO */
 [type=radio] { 

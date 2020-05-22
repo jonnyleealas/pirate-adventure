@@ -16,7 +16,6 @@ h1{
     font-family: 'Italianno', cursive;
     font-size: 60px;
     margin-left: 400px;
-    /* margin:  auto; */
     margin-bottom: 10px;
     
 }
@@ -117,7 +116,7 @@ h2{
     margin-top: 2em;
 }
 
-/* this cchanges rum and booty */
+/* this changes rum and booty */
 #changingstats1{
     font-size: 2em;
     color: yellow;
@@ -127,17 +126,7 @@ h2{
 /* this changes meters */
 #changingstats2{
     font-size: 1em;
-    /* margin-right: 20em; */
-
-  
-   
 }
-
-/* #pic1{
-    float: left;
-   
-} */
-
 
 #coinmeter{
     background-color: yellow;
@@ -152,14 +141,12 @@ h2{
     margin-bottom: 1px;
     width: 200px;
     height: 25px;
-
 }
 
 #spiritmeter{
     background-color: yellow;
     width: 200px;
     height: 25px;
-
 }
 
 
@@ -193,11 +180,4 @@ h2{
 }
 
 
-
-
-/* /* /* #narrative-text{
-    width: 100px;
-    height: 50px;
-    background-color: yellow */
-/* }  
 

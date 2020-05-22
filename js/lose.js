@@ -1,5 +1,6 @@
 'use strict';
 
+var loadSaveButton = document.getElementById('revert');
 
 function showEnding () {
   var getNarrative = localStorage.getItem('endNarrative');
@@ -11,10 +12,6 @@ function showEnding () {
   parentElement.appendChild(narrativeBox);
 }
 
-var loadSaveButton = document.getElementById('revert');
-// if (loadSaveButton !== null) {
-
-// }
 
 function loadSaved() {
   if (localStorage.getItem('character') !== null) {

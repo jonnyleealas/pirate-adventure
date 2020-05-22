@@ -14,14 +14,7 @@ h1{
     border: 5px solid gold;
 }
 
-/* h2{
-    background-color:  saddlebrown;
-    font-family: 'Italianno', cursive;
-    font-size: 38px;
-    color: gold;
-    text-align: center;
-    
-} */
+
 .headerTwo{
     display: flex;
     background-color: saddlebrown;
@@ -115,6 +108,3 @@ justify-content: center;
 width: 1920px; 
 }
 
-}
-
-}

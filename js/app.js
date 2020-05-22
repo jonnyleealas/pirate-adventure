@@ -4,35 +4,6 @@
 var imageName;
 var userName;
 
-// end of game page
-// var loadSaveButton = document.getElementById('sec4');
-// if (loadSaveButton !== null) {
-//   loadSaveButton.addEventListener('click', loadSaved);
-// }
-
-// function loadSaved() {
-//   if (localStorage.getItem('character') !== null) {
-//     var saveTrigger = true;
-//     var stringiedSaveTrigger = JSON.stringify(saveTrigger);
-//     localStorage.setItem('saveTrigger', stringiedSaveTrigger);
-//     window.location.href = 'game.html';
-//   }
-// }
-
-
-// var localStorageCharacter = localStorage.getItem('character');
-//   var parsedCharacter = JSON.parse(localStorageCharacter);
-//   console.log(`getting character out of loacl storage: ${parsedCharacter}`);
-
-//   new Character(parsedCharacter.username, parsedCharacter.fightingAbility, parsedCharacter.pirateSpirit, parsedCharacter.intelligence, parsedCharacter.rum, parsedCharacter.money);
-
-//   var localStorageCardIndex = localStorage.getItem('cardIndex');
-//   var parsedCardIndex = JSON.parse(localStorageCardIndex);
-//   console.log(`getting card index out of local storage${parsedCardIndex}`);
-
-//   cardStackArray[parsedCardIndex].appendElement(choiceElement, 'p');
-// }
-
 
 function getUserName(event) {
   event.preventDefault();
@@ -75,6 +46,7 @@ if (loginForm !== null) {
 
 
 /* Set the width of the side navigation to 250px */
+// this is called in index.htlm
 function openNav() {
   document.getElementById('mySidenav').style.width = "250px";
 }

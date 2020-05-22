@@ -154,7 +154,8 @@ function makeCards() {
 
   new Cards('cubaShortcut', 'Take the shortcut through the pass.', 0, -50, 'pirateSpirit', 'money', 'east', 'west', 'Your ship takes damage and you must stop to repair it using a lot of yer fairly stolen booty! You go back and go around the island instead. It took awhile but you safely made it past the island. What direction to Cuba again?');
 
-  new Cards('long-way', 'Take the long way around the island', 50, 0, 'intelligence', 'rum', 'east', 'west');
+  new Cards('long-way', 'Take the long way around the island', 50, 0, 'intelligence', 'rum', 'east', 'west','It took a while but you safely made it past the island. What direction to Cuba again?');
+
   new Cards('west', 'Go West!', 25, 0, 'pirateSpirit', 'rum', 'fight', 'sneak', 'It took a while but you safely made it past the island and used the extra time to get some more rum in your system. You feel great! Hic… what direction to Cuba again?');
 
   // GAME OVER
@@ -179,7 +180,7 @@ function makeCards() {
   // GAME OVER
   new Cards('pass-ship', 'Pass the mysterious ship', -200, 0, '', '', '', 'loseEnding', 'Your ship slowly moves past the mysterious ship and you sigh a breath of relief after it is gone. The storm has cleared but a crew member notices a shadow in the water. A monstrosity of a sea serpent comes out of the water and eats you whole. GAME OVER.');
 
-  new Cards('investigate', 'Investigate the mysterious ship!', -75, 0, 'fightingAbility', 'sell-souls', 'ignore-offer', 'Upon investigation you find that the captain of the mysterious vessel is the devil himself Davy Jones!This scares you so much you sober up! Davy Jones knows good and well about what is going on in your situation and offers you a deal…');
+  new Cards('investigate', 'Investigate the mysterious ship!', -75, 0, 'fightingAbility','rum', 'sell-souls', 'ignore-offer', 'Upon investigation you find that the captain of the mysterious vessel is the devil himself Davy Jones!This scares you so much you sober up! Davy Jones knows good and well about what is going on in your situation and offers you a deal…');
 
   // one of the main cuba endings
   new Cards('sell-souls', 'Sell the souls of your crew so you can make it to the Bahamas safely, while the rest of your crew is eternally bound to the Flying Dutchman.', 0, 0, '', '', '', 'mainEnding', 'You have sacrificed your crew and now it is just you and your ship. One night as you sail you try and drink away the guilt. In your drunken state, you spot in the water the most beautiful creatures, mermaids. They charm you with their voices enough to get you close to the water and they pull you in and eat you alive. GAME OVER.');
